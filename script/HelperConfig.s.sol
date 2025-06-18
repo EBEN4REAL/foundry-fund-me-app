@@ -8,6 +8,9 @@ contract HelperConfig is Script {
     // if we are on a local network, we deploy mocks
     // otherwise we grab the existing address from the love network
 
+    uint8 public constant DECIMALS = 8;
+    int256 public constant INITIAL_PRICE = 2000e8;
+
     NetworkConfig public activeNetworkConfig;
 
     constructor() {
@@ -41,7 +44,7 @@ contract HelperConfig is Script {
         // 1. Deploy the mocks
         // 2. return the mock address
         vm.startBroadcast();
-        MockV3Aggregator mockPriceFeed = new MockV3Aggregator(8, 200e8);
+        MockV3Aggregator mockPriceFeed = new MockV3Aggregator(DECIMALS, INITIAL_PRICE);
         vm.stopBroadcast();
 
         NetworkConfig memory anvilConfig = NetworkConfig({
