@@ -41,7 +41,8 @@ contract HelperConfig is Script {
     }
 
     function getOrCreateAnvilEthConfig() public returns (NetworkConfig memory) {
-        if (activeNetworkConfig.priceFeed != address(0)) {  // Solidity’s version of “null” or “undefined” for Ethereum addresses
+        if (activeNetworkConfig.priceFeed != address(0)) {
+            // Solidity’s version of “null” or “undefined” for Ethereum addresses
             return activeNetworkConfig;
         }
         // 1. Deploy the mocks
