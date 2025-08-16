@@ -110,7 +110,6 @@ cast send <contract_address> "cheaperWithdraw()" \
 | `getAddressToAmountFunded()` | Returns amount funded by an address                   |
 | `receive()` / `fallback()`   | Triggered when ETH sent or data does not match any function |
 
----
 
 ## ✍️ Author
 
